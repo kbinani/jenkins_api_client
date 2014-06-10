@@ -768,6 +768,9 @@ module JenkinsApi
 
         opts['job_name'] = job_name
 
+        default_params = get_build_params(job_name)
+        params = default_params.merge(params)
+
         msg = "Building job '#{job_name}'"
         msg << " with parameters: #{params.inspect}" unless params.empty?
         @logger.info msg
