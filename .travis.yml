@@ -4,5 +4,8 @@ rvm:
   - 2.0.0
   - 1.9.3
 
+before_install:
+  - travis/setup.sh
+
 script:
   - bundle exec rake unit_tests
